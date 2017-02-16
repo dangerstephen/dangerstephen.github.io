@@ -9,13 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/chat.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
 
 
 </head>
 
-<body class="scroll-assist">
+<body onload="nameBlinker()">
     <script>
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -34,49 +35,65 @@
     </script>
     <div class="main-container">
 
+        <h1 class="large uppercase stephen text-center"><strong>Stephen<strong></strong></strong></h1>
+        <h1 class="large dangerfield text-center"> Dangerfield</h1>
+
         <!-- Landing page  -->
-        <section class="cover fullscreen parallax image-bg">
-            <div class="background-image-holder">
-                <img alt="image" class="background-image" src="img/room.jpg" />
-            </div>
-            <div class="container v-align-transform">
-                <div class="row">
-                    <div class="col-sm-12 text-center hidden-sm-up">
-                        <h1 class="large uppercase stephen"><strong>Stephen<strong></h1>
-                        <h1 class="large dangerfield"> Dangerfield</h1>
-                        <h4>A Full Stack Developer, based in San Francisco.</h4>
-                        <ol class="breadcrumb breadcrumb-2">
-                            <li>
-                                <a href="#about">About</a>
-                            </li>
-                            <li>
-                                <a href="#work">Work</a>
-                            </li>
-                            <li>
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
+        <section id="chat">
+
+        <div class="chat-window" id="chat-window">
+
+          <div class="chat-group" data-active>
+
+            <div class="message messageClient">
+              <div class="bubble bubbleClient">
+                <p class="chat-text">
+                  Hi and welcome to my site 👋🏼
+                </p>
+              </div>
             </div>
 
-            <div class="align-bottom text-center">
-                <ul class="list-inline social-list mb24">
-                    <li>
-                        <a href="#about">
-                            <i class="themify-icon-icon ti-angle-double-down"></i>
-                        </a>
-                    </li>
-                </ul>
+            <div class="message messageClient1">
+              <div class="bubble bubbleClient">
+                <p class="chat-text">
+                  I'm a Software Engineer living in San Franscico🌁
+                </p>
+              </div>
             </div>
-        </section>
+
+            <div class="message messageClient2">
+              <div class="bubble bubbleClient">
+                <p class="chat-text">
+                  I see you're coming from {{provider}}. Whats your name?
+                </p>
+              </div>
+            </div>
+
+            <div class="message messageUser1">
+              <div class="bubble bubbleUser">
+                <p class="chat-text">
+                  <label for="user-name">Hey, Stephen! It's nice to meet you! I'm</label>
+                  <div class="chat-input">
+                    <input type="text" onclick="nameBlinker()" class="chat-input--text" id="user-name" name="user-name" placeholder="enter your name" data-required/>
+                  </div>
+                </p>
+                <img type="submit" data-show="next-chat-group"src="img/up.png"></img>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="wont-chat"><a href="#about">Sorry I'd rather not chat</a></div>
+
+        </div>
+    </section>
+
         <!-- End Landing Page -->
         <!-- About ME -->
-        <section id="about">
+        <section id="about" class="hidden">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
-                        <!-- <img class="" alt="Pic" src="img/stephen2.jpg" /> -->
                         <img class="profile-image" alt="Pic" src="img/stephen1.jpg" />
                     </div>
                     <br>
@@ -98,90 +115,47 @@
             </div>
         </section>
         <!-- END ABOUT ME -->
-        <!-- <div class="black"></div> -->
-
-
         <!-- My Work -->
-        <section id="work">
+        <section id="work" class="hidden">
 
             <div class="container">
                 <div class="row text-center">
                     <div class="col-md-6 col-md-offset-3 text-center">
-                        <div class="">
                             <h1 class="large uppercase">My Work</h1>
                             <i class="work-icon ti-harddrives"></i>
                             <i class="work-icon ti-desktop"></i>
                             <i class="work-icon ti-server"></i>
 
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="projects">
+        <section class="projects hidden" >
             <div class="container">
-                <div class="row masonry masonryFlyIn">
-                    <div class="col-sm-6 masonry-item project" data-filter="People">
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="image-tile hover-tile text-center">
                             <img alt="image" class="background-image" src="img/recipebots.png" />
                             <div class="hover-state">
-                                <div class="modal-container">
-
-                                    <a class="btn-modal">
                                         <h3 class="uppercase mb8">Recipe Bots</h3>
                                         <hr>
                                         <h6 class="uppercase">Ruby on Rails & Javascript</h6>
-                                    </a>
-
-                                    <div class="foundry_modal text-center image-bg overlay fullscreen">
-                                        <div class="background-image-holder">
-                                            <img alt="Background" class="background-image" src="img/cactus.jpg" />
-                                        </div>
-                                        <h2 class="uppercase">Recipe Bots</h2>
-                                        <p class="lead">
-                                            This is a full stack app riding the rails. Built on Ruby on Rails mixed with Javascript. It also uses a scraper script I built, that uses Nokogiri to parse data from given URL's to help generate unique recipe cards for users. For authorization I implemendted
-                                            in Facebook and Google APIs to allow my users easy access and quick sign up. I also used this cool gem to make the ingreditents and directions nested forms so that you can add as many as youd like and simply
-                                            remove them
-                                        </p>
-                                        <a target="_blank" class="btn btn-lg" href="https://recipebots.herokuapp.com/">View Site</a>
-                                        <a target="_blank" class="btn btn-lg" href="https://github.com/dangerstephen/recipe_bots">View Github Repo</a>
-
-                                    </div>
-                                </div>
 
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-6 masonry-item project" data-filter="People">
+                    <div class="col-sm-6 masonry-item project">
                         <div class="image-tile hover-tile text-center">
                             <img alt="image" class="background-image" src="img/ourthoughts.png" />
                             <div class="hover-state">
-                                <div class="modal-container">
 
-                                    <a class="btn-modal">
+
                                         <h3 class="uppercase mb8">Our Thoughts</h3>
                                         <hr>
                                         <h6 class="uppercase">MEAN Stack</h6>
-                                    </a>
 
-
-                                    <div class="foundry_modal text-center image-bg overlay fullscreen">
-                                        <div class="background-image-holder">
-                                            <img alt="Background" class="background-image" src="img/cactus.jpg" />
-                                        </div>
-                                        <h2 class="uppercase">Our Thoughts
-                                                <br /></h2>
-                                        <p class="lead">
-                                            Our thoughts is a full stack app built in the MEAN stack. It allows users to post thoughts/entries that they have. It then uses the Twilio API to send a text message of the entrie to users. The main objective of this App was to create an App with authorization,
-                                            and integrating in the Twilio API.
-                                        </p>
-                                        <a target="_blank" class="btn btn-lg" href="https://ourthoughts.herokuapp.com/">View Site</a>
-                                        <a target="_blank" class="btn btn-lg" href="https://github.com/dangerstephen/OurThoughtsApp">View Github Repo</a>
-
-                                    </div>
-                                </div>
 
                             </div>
                         </div>
@@ -189,67 +163,30 @@
                     </div>
                 </div>
 
-                <div class="row masonry masonryFlyIn">
-                    <div class="col-sm-6 masonry-item project" data-filter="People">
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="image-tile hover-tile text-center">
                             <img alt="image" class="background-image" src="img/hiptravel.png" />
                             <div class="hover-state">
-                                <div class="modal-container">
 
-                                    <a class="btn-modal">
+
                                         <h3 class="uppercase mb8">Vagabond</h3>
                                         <hr>
                                         <h6 class="uppercase">Ruby on Rails </h6>
-                                    </a>
 
-                                    <div class="foundry_modal text-center image-bg overlay fullscreen">
-                                        <div class="background-image-holder">
-                                            <img alt="Background" class="background-image" src="img/cactus.jpg" />
-                                        </div>
-                                        <h2 class="uppercase">Vagabond
-                                            <br /></h2>
-                                        <p class="lead">
-                                            We all love to travel, why not share with others what to do in places after you travel? Vagabond is a travel blog that allows you to post things to do in diffrent cites. This project was created in a 48 hour sprint with a small team. My main responsibilities were the Google Maps API, User Authorization and User Assocations.
-
-                                        </p>
-                                        <a target="_blank" class="btn btn-lg" href="https://hiptraveler.herokuapp.com/">View Site</a>
-                                        <a target="_blank" class="btn btn-lg" href="https://github.com/caseyjoneal/hip_traveler">View Github Repo</a>
-
-                                    </div>
-                                </div>
 
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 masonry-item project" data-filter="People">
+                    <div class="col-sm-6">
                         <div class="image-tile hover-tile text-center">
                             <img alt="image" class="background-image" src="img/TBD.jpg" />
                             <div class="hover-state">
-                                <div class="modal-container">
 
-                                    <a class="btn-modal">
                                         <h3 class="uppercase mb8">More projects are never far behind</h3>
                                         <hr>
-                                        <!-- <h6 class="uppercase">TBA</h6> -->
-                                    </a>
 
 
-                                    <div class="foundry_modal text-center image-bg overlay fullscreen">
-                                        <div class="background-image-holder">
-                                            <img alt="Background" class="background-image" src="img/cactus.jpg" />
-                                        </div>
-                                        <h2 class="uppercase">
-                                                <br /></h2>
-                                        <p class="lead">
-                                            Chances are I have more projects in the works. I love to push myself to grow and develop my skills and for this I find myself always working on projects. Checkout my github to see the things Im curently working on! <br
-                                            />
-
-                                            <br/> Want to work on a project together? Dont be afraid to reach out! <br/>
-                                        </p>
-                                        <a target="_blank" class="btn btn-lg" href="www.github.com/dangerstephen">View my Github </a>
-
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -261,7 +198,7 @@
         <br>
 
         <!-- Contact -->
-        <section id="contact" class="bg-primary">
+        <!-- <section id="contact" class="bg-primary hidden">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-10 col-md-8">
@@ -308,13 +245,12 @@
 
                 </div>
             </div>
-        </section>
+        </section> -->
 
     </div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/parallax.js"></script>
     <script src="js/app.js"></script>
 </body>
 

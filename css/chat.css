@@ -1,0 +1,187 @@
+.wont-chat {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 1rem 0 5rem;
+}
+
+a, body, div, form, html, i, label, p, s {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline
+}
+
+button, input {
+    line-height: normal;
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline
+}
+
+label, p {
+    margin: 0 0 1em
+}
+
+.chat-window .inline-error {
+    position: absolute;
+    right: 120px;
+    padding-top: 2rem;
+    color: red;
+    font-weight: 400;
+    text-align: right;
+}
+
+input[type=text] {
+    display: block;
+    margin: 0;
+    text-align: left;
+    border: 2px solid #0096fc;
+    padding: 3.15rem 3rem;
+    border-radius: .3rem;
+    font-size: 1.4rem;
+    letter-spacing: .15rem;
+    width: 100%;
+    color: #000;
+    background: #fff;
+    font-weight: 400
+}
+
+::-webkit-input-placeholder {
+    color: #fff
+}
+
+:-moz-placeholder {
+    color: #fff
+}
+
+::-moz-placeholder {
+    color: #fff
+}
+
+:-ms-input-placeholder {
+    color: #fff
+}
+
+.btn, .bubble {
+    display: inline-block
+}
+
+.chat-window {
+    max-width: 800px;
+    margin: auto;
+    min-height: 80vh;
+}
+
+@keyframes pop {
+    0% {
+        opacity: 0;
+        transform: scale(.7) translateY(-10px)
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0)
+    }
+}
+
+.message {
+    padding: 1rem;
+    text-align: left;
+    opacity: 0;
+    position: relative
+}
+
+@media (min-width:680px) {
+    .message {
+        padding-left: 8rem
+    }
+}
+
+.messageClient {
+    animation: pop .6s forwards ease;
+}
+
+.messageClient1 {
+    animation: pop .6s forwards ease;
+    animation-delay: 1.3s;
+}
+
+.messageClient2 {
+    animation: pop .6s forwards ease;
+    animation-delay: 2.3s;
+}
+
+.messageUser1 {
+    text-align: right;
+    animation: pop .6s forwards ease;
+    animation-delay: 3.3s;
+    padding-left: 0;
+    padding-right: 5rem
+}
+
+.messageUser {
+    text-align: right;
+    animation: pop .6s forwards ease;
+    animation-delay: 1.3s;
+    padding-left: 0;
+    padding-right: 5rem
+}
+
+@media (min-width:680px) {
+    .messageUser {
+        padding-right: 9rem
+    }
+}
+
+.bubble {
+    margin-left: 2rem;
+    width: 80%;
+    max-width: 400px;
+    padding: 1.5rem 2rem;
+    border-radius: 24px;
+    font-size: 1.1rem;
+    position: relative
+}
+
+@media (min-width:680px) {
+    .bubble {
+        font-size: 1.6rem;
+        padding: 2rem 2.4rem
+    }
+}
+
+.bubble p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 1.5;
+    text-align: left
+}
+
+.bubbleClient {
+    color: #000;
+    background: #fff
+}
+
+.bubbleUser {
+    color: #fff;
+    background-color: #0096fc
+}
+
+.chat-input {
+    display: block;
+    padding-right: 20%
+}
+
+.chat-input--text[type=text] {
+    background: 0 0;
+    padding: 1rem 0 .5rem;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 1.2em;
+    display: inline-block;
+    -webkit-appearance: none;
+    font-weight: 100;
+    display: block;
+    padding-right: 20%
+}
