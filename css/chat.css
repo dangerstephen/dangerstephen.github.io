@@ -1,16 +1,33 @@
-.wont-chat {
+.input {
+    display: block;
+    border: 1px solid white;
+    border-radius: 6px;
+    max-width: 290px;
+    margin-top: 1.3rem;
+}
+
+.input .inputOption {
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    color: white;
+    padding: .7rem 1rem;
+}
+
+
+.input .inputOption[optionActive] {
+    background: white;
+    color: #0096fc;
+}
+
+.wontChat, .mindChanged {
     text-align: center;
     margin-top: 4rem;
     padding: 1rem 0 5rem;
 }
 
 a, body, div, form, html, i, label, p, s {
-    margin: 0;
-    padding: 0;
-    border: 0;
     font: inherit;
-    font-size: 100%;
-    vertical-align: baseline
 }
 
 button, input {
@@ -20,11 +37,7 @@ button, input {
     vertical-align: baseline
 }
 
-label, p {
-    margin: 0 0 1em
-}
-
-.chat-window .inline-error {
+.chatWindow .inline-error {
     position: absolute;
     right: 120px;
     padding-top: 2rem;
@@ -33,13 +46,16 @@ label, p {
     text-align: right;
 }
 
-input[type=text] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
     display: block;
     margin: 0;
     text-align: left;
     border: 2px solid #0096fc;
-    padding: 3.15rem 3rem;
-    border-radius: .3rem;
+    padding: 5.15rem 5rem;
+    border-radius: .5rem;
     font-size: 1.4rem;
     letter-spacing: .15rem;
     width: 100%;
@@ -48,19 +64,24 @@ input[type=text] {
     font-weight: 400
 }
 
+
 ::-webkit-input-placeholder {
+    opacity: 1;
     color: #fff
 }
 
 :-moz-placeholder {
+    opacity: 1;
     color: #fff
 }
 
 ::-moz-placeholder {
+    opacity: 1;
     color: #fff
 }
 
 :-ms-input-placeholder {
+    opacity: 1;
     color: #fff
 }
 
@@ -68,7 +89,7 @@ input[type=text] {
     display: inline-block
 }
 
-.chat-window {
+.chatWindow {
     max-width: 800px;
     margin: auto;
     min-height: 80vh;
@@ -99,23 +120,31 @@ input[type=text] {
 }
 
 .messageClient {
-    animation: pop .6s forwards ease;
+    animation: pop .5s forwards ease;
 }
 
 .messageClient1 {
-    animation: pop .6s forwards ease;
-    animation-delay: 1.3s;
+    animation: pop .5s forwards ease;
+    animation-delay: 1.0s;
 }
 
 .messageClient2 {
-    animation: pop .6s forwards ease;
-    animation-delay: 2.3s;
+    animation: pop .5s forwards ease;
+    animation-delay: 2.0s;
 }
 
 .messageUser1 {
     text-align: right;
-    animation: pop .6s forwards ease;
-    animation-delay: 3.3s;
+    animation: pop .5s forwards ease;
+    animation-delay: 2.0s;
+    padding-left: 0;
+    padding-right: 5rem
+}
+
+.messageUser2 {
+    text-align: right;
+    animation: pop .5s forwards ease;
+    animation-delay: 3.0s;
     padding-left: 0;
     padding-right: 5rem
 }
@@ -123,7 +152,7 @@ input[type=text] {
 .messageUser {
     text-align: right;
     animation: pop .6s forwards ease;
-    animation-delay: 1.3s;
+    animation-delay: 1.5s;
     padding-left: 0;
     padding-right: 5rem
 }
@@ -173,7 +202,8 @@ input[type=text] {
     padding-right: 20%
 }
 
-.chat-input--text[type=text] {
+.inputChatText[type=text],
+.inputChatText[type=email] {
     background: 0 0;
     padding: 1rem 0 .5rem;
     border-bottom: 1px solid #fff;

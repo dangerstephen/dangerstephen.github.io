@@ -33,172 +33,269 @@
         ga('create', 'UA-90388898-1', 'auto');
         ga('send', 'pageview');
     </script>
-    <div class="main-container">
 
-        <h1 class="large uppercase stephen text-center"><strong>Stephen<strong></strong></strong></h1>
-        <h1 class="large dangerfield text-center"> Dangerfield</h1>
+    <h1 class="large dangerfield text-center"><strong>Stephen<strong></strong></strong></h1>
+    <h1 class="large dangerfield text-center"> Dangerfield</h1>
 
-        <!-- Landing page  -->
-        <section id="chat">
+    <!-- Landing page  -->
 
-        <div class="chat-window" id="chat-window">
 
-          <div class="chat-group" data-active>
+    <div class="chatWindow" id="chatWindow">
+
+        <div class="group" data-active>
 
             <div class="message messageClient">
-              <div class="bubble bubbleClient">
-                <p class="chat-text">
-                  Hi and welcome to my site 👋🏼
-                </p>
-              </div>
+                <div class="bubble bubbleClient">
+                    <p class="chatText">
+                        Hi! 👋🏼 Thanks for stopping by
+                    </p>
+                </div>
             </div>
 
             <div class="message messageClient1">
-              <div class="bubble bubbleClient">
-                <p class="chat-text">
-                  I'm a Software Engineer living in San Franscico🌁
-                </p>
-              </div>
-            </div>
-
-            <div class="message messageClient2">
-              <div class="bubble bubbleClient">
-                <p class="chat-text">
-                  I see you're coming from {{provider}}. Whats your name?
-                </p>
-              </div>
+                <div class="bubble bubbleClient">
+                    <p class="chatText">
+                        Incase you didnt already know, my name is Stephen Dangerfield. I'm a Software Engineer, living in San Franscico🌁
+                    </p>
+                </div>
             </div>
 
             <div class="message messageUser1">
-              <div class="bubble bubbleUser">
-                <p class="chat-text">
-                  <label for="user-name">Hey, Stephen! It's nice to meet you! I'm</label>
-                  <div class="chat-input">
-                    <input type="text" onclick="nameBlinker()" class="chat-input--text" id="user-name" name="user-name" placeholder="enter your name" data-required/>
-                  </div>
-                </p>
-                <img type="submit" data-show="next-chat-group"src="img/up.png"></img>
-              </div>
+                <div class="bubble bubbleUser">
+                    <p class="chatText">
+                        Hey, Stephen! It's nice to meet you! I'm
+                        <div class="chat-input">
+                            <input type="text" onclick="nameBlinker()" class="inputChatText" id="user-name" name="user-name" placeholder="enter your name" data-required/>
+                        </div>
+                    </p>
+                    <img type="submit" class="nextGroup" src="img/up.png"></img>
+                </div>
             </div>
 
-          </div>
+        </div>
 
-          <div class="wont-chat"><a href="#about">Sorry I'd rather not chat</a></div>
+        <div class="group">
+            <div class="message messageClient">
+                <div class="bubble bubbleClient">
+                    <p class="chatText">
+                        Nice to meet you, <span sendData="#user-name"></span> 🙌🏼 Its great to have you with me today! Before we waste anymore time lets get started!
+                    </p>
+                </div>
+            </div>
 
+            <div class="message messageClient1">
+                <div class="bubble bubbleClient">
+                    <p class="chatText">
+                        From here on out I will let you take over the conversation. Id love to tell you <strong>All</strong> about me. However neither of us have time for that. So I'll just talk about some main points
+                    </p>
+                </div>
+            </div>
+
+            <div class="message messageClient2">
+                <div class="bubble bubbleClient">
+                    <p class="chatText">
+                        To learn a little about who I am type <strong>About</strong>. Curious about my work history? Simply type <strong>Experience</strong>. Projects are always fun. Type <strong>Projects</strong> to see some of my favorites ive worked
+                        on. I know this conversation is limited so also feel free to type <strong>Contact</strong> and I'll help you get in touch with me.
+                    </p>
+                </div>
+            </div>
+
+            <div class="message messageUser2">
+                <div class="bubble bubbleUser">
+                    <div class="input" data-field="#clientResponse1">
+                        <div class="inputOption aboutOption1">About</div>
+                        <div class="inputOption projectsOption1">Projects</div>
+                        <div class="inputOption experienceOption1">Experience</div>
+                        <div class="inputOption contactOption1">Contact</div>
+                    </div>
+                    <input type="hidden" name="clientResponse1" id="clientResponse1" value="nill">
+                    <img type="submit" class="nextGroup1" src="img/up.png"></img>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="group">
+        </div>
+
+        <div class="group">
+            <div class="message messageUser2">
+                <div class="bubble bubbleUser">
+                    <div class="input" data-field="#clientResponse2">
+                        <div class="inputOption aboutOption2">About</div>
+                        <div class="inputOption projectsOption2">Projects</div>
+                        <div class="inputOption experienceOption2">Experience</div>
+                        <div class="inputOption contactOption2">Contact</div>
+                    </div>
+                    <input type="hidden" name="clientResponse2" id="clientResponse2" value="nill">
+                    <img type="submit" class="nextGroup2" src="img/up.png"></img>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="group">
+        </div>
+
+        <div class="group">
+            <div class="message messageUser2">
+                <div class="bubble bubbleUser">
+                    <div class="input" data-field="#clientResponse3">
+                        <div class="inputOption aboutOption3">About</div>
+                        <div class="inputOption projectsOption3">Projects</div>
+                        <div class="inputOption experienceOption3">Experience</div>
+                        <div class="inputOption contactOption3">Contact</div>
+                    </div>
+                    <input type="hidden" name="clientResponse3" id="clientResponse3" value="nill">
+                    <img type="submit" class="nextGroup3" src="img/up.png"></img>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="group">
+        </div>
+
+        <div class="group">
+            <div class="message messageUser2">
+                <div class="bubble bubbleUser">
+                    <div class="input" data-field="#clientResponse4">
+                        <div class="inputOption aboutOption4">About</div>
+                        <div class="inputOption projectsOption4">Projects</div>
+                        <div class="inputOption experienceOption4">Experience</div>
+                        <div class="inputOption contactOption4">Contact</div>
+                    </div>
+                    <input type="hidden" name="clientResponse4" id="clientResponse4" value="nill">
+                    <img type="submit" class="nextGroup4" src="img/up.png"></img>
+                </div>
+
+            </div>
+        </div>
+        <div class="group">
+        </div>
+
+
+
+        <!-- <div class="footer-icons"><a href=""><img src="img/linkedin.png"></img></a><a href=""><img src="img/instagram.png"></img></a><a href=""><img src="img/github.png"></img></a></div> -->
+        <a href="#about">
+            <div class="wontChat">Sorry I'd rather not chat</div>
+        </a>
+        <div class="mindChanged hidden"><a>I changed my mind, let's chat</a></div>
+
+    </div>
+
+
+    <!-- End Landing Page -->
+    <!-- About ME -->
+    <section id="about" class="hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                    <img class="profile-image" alt="Pic" src="img/stephen1.jpg" />
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6 col-sm-offset-1">
+                    <div class="feature bordered">
+                        <h1 class="large uppercase about">About&nbsp;Me</h1>
+                        <p class="">Hi, I'm Stephen Dangerfield, a lover & creator of the web. When not behind a computer you can find me exploring the outdoors, climbing big rocks, trail running, or eating delicious food. I love a new challenge. Take a look around,
+                            I'd love to chat!
+                            <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a>
+
+                        </p>
+                        <p>Want to know more?&nbsp;<a href="stephen_dangerfield.pdf" download> Download my Resume&nbsp;</a> <i class="ti-download"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END ABOUT ME -->
+    <!-- My Work -->
+    <section id="work" class="hidden">
+
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <h1 class="large uppercase">My Work</h1>
+                    <i class="work-icon ti-harddrives"></i>
+                    <i class="work-icon ti-desktop"></i>
+                    <i class="work-icon ti-server"></i>
+
+                </div>
+            </div>
         </div>
     </section>
 
-        <!-- End Landing Page -->
-        <!-- About ME -->
-        <section id="about" class="hidden">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <img class="profile-image" alt="Pic" src="img/stephen1.jpg" />
-                    </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <div class="col-sm-6 col-sm-offset-1">
-                        <div class="feature bordered">
-                            <h1 class="large uppercase about">About&nbsp;Me</h1>
-                            <p class="">Hi, I'm Stephen Dangerfield, a lover & creator of the web. When not behind a computer you can find me exploring the outdoors, climbing big rocks, trail running, or eating delicious food. I love a new challenge. Take a look
-                                around, I'd love to chat!
-                                <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a>
+    <section class="projects hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="image-tile hover-tile text-center">
+                        <img alt="image" class="background-image" src="img/recipebots.png" />
+                        <div class="hover-state">
+                            <h3 class="uppercase mb8">Recipe Bots</h3>
+                            <hr>
+                            <h6 class="uppercase">Ruby on Rails & Javascript</h6>
 
-                            </p>
-                            <p>Want to know more?&nbsp;<a href="stephen_dangerfield.pdf" download> Download my Resume&nbsp;</a> <i class="ti-download"></i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 masonry-item project">
+                    <div class="image-tile hover-tile text-center">
+                        <img alt="image" class="background-image" src="img/ourthoughts.png" />
+                        <div class="hover-state">
+
+
+                            <h3 class="uppercase mb8">Our Thoughts</h3>
+                            <hr>
+                            <h6 class="uppercase">MEAN Stack</h6>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="image-tile hover-tile text-center">
+                        <img alt="image" class="background-image" src="img/hiptravel.png" />
+                        <div class="hover-state">
+
+
+                            <h3 class="uppercase mb8">Vagabond</h3>
+                            <hr>
+                            <h6 class="uppercase">Ruby on Rails </h6>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="image-tile hover-tile text-center">
+                        <img alt="image" class="background-image" src="img/TBD.jpg" />
+                        <div class="hover-state">
+
+                            <h3 class="uppercase mb8">More projects are never far behind</h3>
+                            <hr>
+
+
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- END ABOUT ME -->
-        <!-- My Work -->
-        <section id="work" class="hidden">
+        </div>
+    </section>
+    <!-- End my work -->
 
-            <div class="container">
-                <div class="row text-center">
-                    <div class="col-md-6 col-md-offset-3 text-center">
-                            <h1 class="large uppercase">My Work</h1>
-                            <i class="work-icon ti-harddrives"></i>
-                            <i class="work-icon ti-desktop"></i>
-                            <i class="work-icon ti-server"></i>
+    <br>
 
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="projects hidden" >
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="image-tile hover-tile text-center">
-                            <img alt="image" class="background-image" src="img/recipebots.png" />
-                            <div class="hover-state">
-                                        <h3 class="uppercase mb8">Recipe Bots</h3>
-                                        <hr>
-                                        <h6 class="uppercase">Ruby on Rails & Javascript</h6>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 masonry-item project">
-                        <div class="image-tile hover-tile text-center">
-                            <img alt="image" class="background-image" src="img/ourthoughts.png" />
-                            <div class="hover-state">
-
-
-                                        <h3 class="uppercase mb8">Our Thoughts</h3>
-                                        <hr>
-                                        <h6 class="uppercase">MEAN Stack</h6>
-
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="image-tile hover-tile text-center">
-                            <img alt="image" class="background-image" src="img/hiptravel.png" />
-                            <div class="hover-state">
-
-
-                                        <h3 class="uppercase mb8">Vagabond</h3>
-                                        <hr>
-                                        <h6 class="uppercase">Ruby on Rails </h6>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="image-tile hover-tile text-center">
-                            <img alt="image" class="background-image" src="img/TBD.jpg" />
-                            <div class="hover-state">
-
-                                        <h3 class="uppercase mb8">More projects are never far behind</h3>
-                                        <hr>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End my work -->
-
-        <br>
-
-        <!-- Contact -->
-        <!-- <section id="contact" class="bg-primary hidden">
+    <!-- Contact -->
+    <!-- <section id="contact" class="bg-primary hidden">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-10 col-md-8">
@@ -247,7 +344,7 @@
             </div>
         </section> -->
 
-    </div>
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

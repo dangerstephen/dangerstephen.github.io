@@ -1,3 +1,18 @@
+body {
+  background-color: #F2F2F2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #292929;
+  overflow-x: hidden;
+}
+
+html{
+  font-size: 60%;
+}
+
 .themify-icon-icon {
   padding: 10px;
   font-size: 33px;
@@ -16,30 +31,14 @@
   margin-top: 120px;
 }
 
-.stephen {
-  padding-bottom: 0px;
-  margin-bottom: 0px;
+.stephen .dangerfield{
+  padding: 0px;
+  margin: 0px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 17px;
 }
 
-.dangerfield {
-  padding-top: 0px;
-  margin-top: 0px;
-}
-
-body {
-  background-color: #F2F2F2;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
-  line-height: 24px;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #0f0f0f;
-  overflow-x: hidden;
-}
-
-html{
-  font-size: 65%;
-}
 
 ul {
   list-style: none;
@@ -48,17 +47,6 @@ ul {
 .image-bg hr {
   border-color: #fff;
   opacity: .6;
-}
-
-h1,h2,h3,h4,h5,p,ul,button {
-  margin-bottom: 24px;
-  margin-top: 0;
-  padding: 0;
-}
-
-h1,h2,h3,h4,h5,h6 {
-  font-weight: 300;
-  color: #292929;
 }
 
 h1,.h1 {
@@ -126,27 +114,13 @@ h5 {
   }
 }
 
-.uppercase {
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-h1.uppercase {
-  letter-spacing: 17px;
-  margin-right: -17px;
-}
-
 .bg-primary {
   background: #2b3549 !important;
 }
 
-.about {
+/*.about {
   font-size: 130px;
-}
-
-#about {
-  padding: 40px 0;
-}
+}*/
 
 #work {
   padding: 40px 0;
