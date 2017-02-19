@@ -6,7 +6,7 @@
     margin-top: 1.3rem;
 }
 
-.input .inputOption {
+.input .option {
     display: block;
     text-align: left;
     cursor: pointer;
@@ -15,7 +15,7 @@
 }
 
 
-.input .inputOption[optionActive] {
+.input .option[optionActive] {
     background: white;
     color: #0096fc;
 }
@@ -149,6 +149,14 @@ textarea {
     padding-right: 5rem
 }
 
+.messageUser3 {
+    text-align: right;
+    animation: pop .5s forwards ease;
+    animation-delay: 4.0s;
+    padding-left: 0;
+    padding-right: 5rem
+}
+
 .messageUser {
     text-align: right;
     animation: pop .6s forwards ease;
@@ -189,7 +197,7 @@ textarea {
 
 .bubbleClient {
     color: #000;
-    background: #fff
+    background: #F2F2F2
 }
 
 .bubbleUser {

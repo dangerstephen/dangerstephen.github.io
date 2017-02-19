@@ -1,5 +1,5 @@
 body {
-  background-color: #F2F2F2;
+  background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -24,6 +24,15 @@ html{
 .work-icon {
   font-size: 35px;
   padding: 7px;
+}
+
+.projectTitle{
+  text-decoration: underline;
+}
+
+.projectNav{
+  margin: 5px;
+  padding: 15px;
 }
 
 .profile-image {
@@ -118,9 +127,9 @@ h5 {
   background: #2b3549 !important;
 }
 
-/*.about {
+.about {
   font-size: 130px;
-}*/
+}
 
 #work {
   padding: 40px 0;
