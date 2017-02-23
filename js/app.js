@@ -144,6 +144,9 @@ $(document).ready(function() {
                     $('.aboutOption2').addClass('hidden');
                     $('.aboutOption3').addClass('hidden');
                     $('.aboutOption4').addClass('hidden');
+                    $('.contactOption1').addClass('hidden');
+                    $('.experienceOption1').addClass('hidden');
+                    $('.projectsOption1').addClass('hidden');
                     $('.nextGroup1').addClass('hidden');
                     pageMover();
                     setTimeout(pageMover(), 3000);
@@ -152,6 +155,10 @@ $(document).ready(function() {
                     $('.contactOption2').addClass('hidden');
                     $('.contactOption3').addClass('hidden');
                     $('.contactOption4').addClass('hidden');
+                    $('.aboutOption1').addClass('hidden');
+                    $('.experienceOption1').addClass('hidden');
+                    $('.projectsOption1').addClass('hidden');
+
                     $('.nextGroup1').addClass('hidden');
                     pageMover();
                     $(document).on('click', '.sendEmail', function(e) {
@@ -181,14 +188,21 @@ $(document).ready(function() {
                     $('.experienceOption2').addClass('hidden');
                     $('.experienceOption3').addClass('hidden');
                     $('.experienceOption4').addClass('hidden');
+                    $('.contactOption1').addClass('hidden');
+                    $('.aboutOption1').addClass('hidden');
+                    $('.projectsOption1').addClass('hidden');
+
                     $('.nextGroup1').addClass('hidden');
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse1 === "Projects") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun mean of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun form of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
                     $('.projectsOption2').addClass('hidden');
                     $('.projectsOption3').addClass('hidden');
                     $('.projectsOption4').addClass('hidden');
+                    $('.contactOption1').addClass('hidden');
+                    $('.experienceOption1').addClass('hidden');
+                    $('.aboutOption1').addClass('hidden');
                     $('.nextGroup1').addClass('hidden');
                     pageMover();
                     setTimeout(pageMover(), 3000);
@@ -217,6 +231,9 @@ $(document).ready(function() {
                     newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww 😊 I\'m flatterd. I\'m Stephen Dangerfield, when behind a computer I\'m a software engineer. I love learning new things and challanging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah I came to fall in love with everything outdoors. So I now spend my free time in it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
                     $('.aboutOption3').addClass('hidden');
                     $('.aboutOption4').addClass('hidden');
+                    $('.contactOption2').addClass('hidden');
+                    $('.experienceOption2').addClass('hidden');
+                    $('.projectsOption2').addClass('hidden');
                     $('.nextGroup2').addClass('hidden');
                     pageMover();
                     setTimeout(pageMover(), 3000);
@@ -224,6 +241,10 @@ $(document).ready(function() {
                     newActive.append('<form class="contactForm"><div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required/></div><textarea type="text" class="inputChatText" id="message" name="message" placeholder="enter your message" data-required/></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.contactOption3').addClass('hidden');
                     $('.contactOption4').addClass('hidden');
+                    $('.aboutOption2').addClass('hidden');
+                    $('.experienceOption2').addClass('hidden');
+                    $('.projectsOption2').addClass('hidden');
+
                     $('.nextGroup2').addClass('hidden');
                     pageMover();
                     $(document).on('click', '.sendEmail', function(e) {
@@ -252,13 +273,19 @@ $(document).ready(function() {
                     newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Most Recently I was a Full Stack Web Developer at <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>. During my time here I worked on developing applications during tight 1 week deadlines both on teams and individually.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to GA I was a Technician Manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>. A few of my rolls here included: Technician Training, Recruiting and Inventory Managment. For diffrent offices accros the US.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a> </p></div></div>');
                     $('.experienceOption3').addClass('hidden');
                     $('.experienceOption4').addClass('hidden');
+                    $('.contactOption2').addClass('hidden');
+                    $('.aboutOption2').addClass('hidden');
+                    $('.projectsOption2').addClass('hidden');
                     $('.nextGroup2').addClass('hidden');
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse2 === "Projects") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun mean of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun form of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
                     $('.projectsOption3').addClass('hidden');
                     $('.projectsOption4').addClass('hidden');
+                    $('.contactOption2').addClass('hidden');
+                    $('.experienceOption2').addClass('hidden');
+                    $('.aboutOption2').addClass('hidden');
                     $('.nextGroup2').addClass('hidden');
                     pageMover();
                     setTimeout(pageMover(), 3000);
@@ -287,12 +314,18 @@ $(document).ready(function() {
                 if (clientResponse3 === "About") {
                     newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww 😊 I\'m flatterd. I\'m Stephen Dangerfield, when behind a computer I\'m a software engineer. I love learning new things and challanging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah I came to fall in love with everything outdoors. So I now spend my free time in it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
                     $('.aboutOption4').addClass('hidden');
+                    $('.contactOption3').addClass('hidden');
+                    $('.experienceOption3').addClass('hidden');
+                    $('.projectsOption3').addClass('hidden');
                     $('.nextGroup3').addClass('hidden');
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse3 === "Contact") {
                     newActive.append('<form class="contactForm"><div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required/></div><textarea type="text" class="inputChatText" id="message" name="message" placeholder="enter your message" data-required/></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.contactOption4').addClass('hidden');
+                    $('.aboutOption3').addClass('hidden');
+                    $('.experienceOption3').addClass('hidden');
+                    $('.projectsOption3').addClass('hidden');
                     $('.nextGroup3').addClass('hidden');
                     pageMover();
                     $(document).on('click', '.sendEmail', function(e) {
@@ -320,12 +353,18 @@ $(document).ready(function() {
                 } else if (clientResponse3 === "Experience") {
                     newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Most Recently I was a Full Stack Web Developer at <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>. During my time here I worked on developing applications during tight 1 week deadlines both on teams and individually.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to GA I was a Technician Manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>. A few of my rolls here included: Technician Training, Recruiting and Inventory Managment. For diffrent offices accros the US.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a> </p></div></div>');
                     $('.experienceOption4').addClass('hidden');
+                    $('.contactOption3').addClass('hidden');
+                    $('.aboutOption3').addClass('hidden');
+                    $('.projectsOption3').addClass('hidden');
                     $('.nextGroup3').addClass('hidden');
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse3 === "Projects") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun mean of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun form of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
                     $('.projectsOption4').addClass('hidden');
+                    $('.contactOption3').addClass('hidden');
+                    $('.experienceOption3').addClass('hidden');
+                    $('.aboutOption3').addClass('hidden');
                     $('.nextGroup3').addClass('hidden');
                     pageMover();
                     setTimeout(pageMover(), 3000);
@@ -354,12 +393,18 @@ $(document).ready(function() {
                     newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww 😊 I\'m flatterd. I\'m Stephen Dangerfield, when behind a computer I\'m a software engineer. I love learning new things and challanging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah I came to fall in love with everything outdoors. So I now spend my free time in it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
                     newActive.append('<div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText"> Gotta run 🏃🏼! Enjoy the rest of the site and have a great day! Let me know if you have questions.</p></div></div>');
                     $('.wontChat').addClass('hidden');
+                    $('.contactOption4').addClass('hidden');
+                    $('.experienceOption4').addClass('hidden');
+                    $('.projectsOption4').addClass('hidden');
                     $('section').removeClass('hidden');
                     $('.nextGroup4').addClass('hidden');
                     pageMover();
                 } else if (clientResponse4 === "Contact") {
                     newActive.append('<form class="contactForm"><div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required/></div><textarea type="text" class="inputChatText" id="message" name="message" placeholder="enter your message" data-required/></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.nextGroup4').addClass('hidden');
+                    $('.aboutOption4').addClass('hidden');
+                    $('.experienceOption4').addClass('hidden');
+                    $('.projectsOption4').addClass('hidden');
                     pageMover();
                     $(document).on('click', '.sendEmail', function(e) {
                         e.preventDefault();
@@ -388,12 +433,18 @@ $(document).ready(function() {
                 } else if (clientResponse4 === "Experience") {
                     newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Most Recently I was a Full Stack Web Developer at <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>. During my time here I worked on developing applications during tight 1 week deadlines both on teams and individually.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to GA I was a Technician Manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>. A few of my rolls here included: Technician Training, Recruiting and Inventory Managment. For diffrent offices accros the US.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a>. Gotta run 🏃🏼 Enjoy the rest of the site and have a great day! Let me know if you have questions!</p></div></div>');
                     $('.wontChat').addClass('hidden');
+                    $('.contactOption4').addClass('hidden');
+                    $('.aboutOption4').addClass('hidden');
+                    $('.projectsOption4').addClass('hidden');
                     $('section').removeClass('hidden');
                     $('.nextGroup4').addClass('hidden');
                     pageMover();
                 } else if (clientResponse4 === "Projects") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun mean of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>. Gotta run 🏃🏼 Enjoy the rest of the site and have a great day! Let me know if you have questions!</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun form of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>. Gotta run 🏃🏼 Enjoy the rest of the site and have a great day! Let me know if you have questions!</p></div></div>');
                     $('.wontChat').addClass('hidden');
+                    $('.contactOption4').addClass('hidden');
+                    $('.experienceOption4').addClass('hidden');
+                    $('.aboutOption4').addClass('hidden');
                     $('section').removeClass('hidden');
                     $('.nextGroup4').addClass('hidden');
                     pageMover();
@@ -431,14 +482,47 @@ $(document).ready(function() {
 
 
     // input fields
-    $('.option').on('click', function(e) {
+    $('.option1').on('click', function(e) {
         e.preventDefault();
         var input = $($(this).parent().attr('data-field'));
         input.val($(this).text());
         var optionActive = $(this).parent('.input').find('[optionActive]');
         optionActive.removeAttr('optionActive');
         $(this).attr('optionActive', '');
+        $('.nextGroup1').click();
     });
+
+    $('.option2').on('click', function(e) {
+        e.preventDefault();
+        var input = $($(this).parent().attr('data-field'));
+        input.val($(this).text());
+        var optionActive = $(this).parent('.input').find('[optionActive]');
+        optionActive.removeAttr('optionActive');
+        $(this).attr('optionActive', '');
+        $('.nextGroup2').click();
+    });
+
+    $('.option3').on('click', function(e) {
+        e.preventDefault();
+        var input = $($(this).parent().attr('data-field'));
+        input.val($(this).text());
+        var optionActive = $(this).parent('.input').find('[optionActive]');
+        optionActive.removeAttr('optionActive');
+        $(this).attr('optionActive', '');
+        $('.nextGroup3').click();
+    });
+
+    $('.option4').on('click', function(e) {
+        e.preventDefault();
+        var input = $($(this).parent().attr('data-field'));
+        input.val($(this).text());
+        var optionActive = $(this).parent('.input').find('[optionActive]');
+        optionActive.removeAttr('optionActive');
+        $(this).attr('optionActive', '');
+        $('.nextGroup4').click();
+    });
+
+
 
     $('[sendData]').each(function() {
         var watch = $($(this).attr('sendData'));

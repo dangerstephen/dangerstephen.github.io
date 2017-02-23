@@ -9,12 +9,20 @@ body {
   overflow-x: hidden;
 }
 
-.projectTitle{
-
+.footer-links{
+color: inherit;
+text-decoration: none;
 }
 
-.projectNav{
+.footer-links:hover {
+ color: inherit;
+ text-decoration:none;
+ cursor:pointer;
+}
 
+.footer-icon {
+  font-size: 20px;
+  padding: 10px;
 }
 
 .stephen .dangerfield{
@@ -55,6 +63,12 @@ h1.large {
 h2.large {
   font-size: 62px;
   line-height: 70px;
+  font-weight: 100;
+}
+
+h5.large {
+  font-size: 30px;
+  line-height: 40px;
   font-weight: 100;
 }
 
@@ -159,4 +173,8 @@ hr {
   margin: 1em 1em 2em;
   position: relative;
 
+}
+
+#contact{
+  padding: 10px;
 }

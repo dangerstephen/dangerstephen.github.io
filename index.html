@@ -11,6 +11,7 @@
     <link href="css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/chat.css" rel="stylesheet" type="text/css" media="all" />
     <link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
+
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400%7CRaleway:100,400,300,500,600,700%7COpen+Sans:400,500,600' rel='stylesheet' type='text/css'>
 
 
@@ -103,10 +104,10 @@
             <div class="message messageUser2">
                 <div class="bubble bubbleUser">
                     <div class="input" data-field="#clientResponse1">
-                        <div class="option aboutOption1">About</div>
-                        <div class="option projectsOption1">Projects</div>
-                        <div class="option experienceOption1">Experience</div>
-                        <div class="option contactOption1">Contact</div>
+                        <div class="option option1 aboutOption1">About</div>
+                        <div class="option option1 projectsOption1">Projects</div>
+                        <div class="option option1 experienceOption1">Experience</div>
+                        <div class="option option1 contactOption1">Contact</div>
                     </div>
                     <input type="hidden" name="clientResponse1" id="clientResponse1" value="nill">
                     <img type="submit" class="nextGroup1" src="img/up.png"></img>
@@ -122,10 +123,10 @@
             <div class="message messageUser2">
                 <div class="bubble bubbleUser">
                     <div class="input" data-field="#clientResponse2">
-                        <div class="option aboutOption2">About</div>
-                        <div class="option projectsOption2">Projects</div>
-                        <div class="option experienceOption2">Experience</div>
-                        <div class="option contactOption2">Contact</div>
+                        <div class="option option2 aboutOption2">About</div>
+                        <div class="option option2 projectsOption2">Projects</div>
+                        <div class="option option2 experienceOption2">Experience</div>
+                        <div class="option option2 contactOption2">Contact</div>
                     </div>
                     <input type="hidden" name="clientResponse2" id="clientResponse2" value="nill">
                     <img type="submit" class="nextGroup2" src="img/up.png"></img>
@@ -141,10 +142,10 @@
             <div class="message messageUser2">
                 <div class="bubble bubbleUser">
                     <div class="input" data-field="#clientResponse3">
-                        <div class="option aboutOption3">About</div>
-                        <div class="option projectsOption3">Projects</div>
-                        <div class="option experienceOption3">Experience</div>
-                        <div class="option contactOption3">Contact</div>
+                        <div class="option option3 aboutOption3">About</div>
+                        <div class="option option3 projectsOption3">Projects</div>
+                        <div class="option option3 experienceOption3">Experience</div>
+                        <div class="option option3 contactOption3">Contact</div>
                     </div>
                     <input type="hidden" name="clientResponse3" id="clientResponse3" value="nill">
                     <img type="submit" class="nextGroup3" src="img/up.png"></img>
@@ -160,10 +161,10 @@
             <div class="message messageUser2">
                 <div class="bubble bubbleUser">
                     <div class="input" data-field="#clientResponse4">
-                        <div class="option aboutOption4">About</div>
-                        <div class="option projectsOption4">Projects</div>
-                        <div class="option experienceOption4">Experience</div>
-                        <div class="option contactOption4">Contact</div>
+                        <div class="option option4 aboutOption4">About</div>
+                        <div class="option option4 projectsOption4">Projects</div>
+                        <div class="option option4 experienceOption4">Experience</div>
+                        <div class="option option4 contactOption4">Contact</div>
                     </div>
                     <input type="hidden" name="clientResponse4" id="clientResponse4" value="nill">
                     <img type="submit" class="nextGroup4" src="img/up.png"></img>
@@ -174,7 +175,6 @@
         <div class="group">
         </div>
 
-        <!-- <div class="footer-icons"><a href=""><img src="img/linkedin.png"></img></a><a href=""><img src="img/instagram.png"></img></a><a href=""><img src="img/github.png"></img></a></div> -->
         <a href="#about">
             <div class="wontChat">Sorry I'd rather not chat</div>
         </a>
@@ -230,31 +230,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <a href="recipebots.html">
+                    <a target="_blank" href="https://recipebots.herokuapp.com">
                     <div class="image-tile hover-tile text-center">
                         <img alt="image" class="background-image" src="img/recipebots.png" />
                         <div class="hover-state">
-                            <h3 class="uppercase mb8">Recipe Bots</h3>
-                            <hr>
-                            <h6 class="uppercase">Ruby on Rails & Javascript</h6>
-
+                            <h5 class="uppercase">
+                                This app was built using Javascript and Ruby on Rails.
+                                Users have the ability to input a website URl, the application then generate the information needed to create a unique recipe card.
+                                For means of simplicity I used Facebook and Google API's to allow the user to quickly sign up. Start your Recipe Collection today!
+                            </h5>
                         </div>
                     </div>
                 </a>
                 </div>
 
                 <div class="col-sm-6">
-                    <a href="ourthoughts.html">
+                    <a target="_blank" href="https://ourthoughts.herokuapp.com/signup">
                     <div class="image-tile hover-tile text-center">
                         <img alt="image" class="background-image" src="img/ourthoughts.png" />
                         <div class="hover-state">
-
-
-                            <h3 class="uppercase mb8">Our Thoughts</h3>
-                            <hr>
-                            <h6 class="uppercase">MEAN Stack</h6>
-
-
+                            <h5 class="uppercase">
+                                This app was buit using the MEAN stack. It communicates with Users via the Twilio SMS API.  My primary responsibilities during this project
+                                included all the backend work and intergrating in the Twilio API. Want to see it how it works? Simply sign up with your phone number,
+                                create a thought and see the site in action!
+                            </h3>
                         </div>
                     </div>
                 </a>
@@ -264,33 +263,26 @@
 
             <div class="row">
                 <div class="col-sm-6">
-                    <a href="vagabond.html">
+                    <a target="_blank" href="https://hiptraveler.herokuapp.com">
                     <div class="image-tile hover-tile text-center">
                         <img alt="image" class="background-image" src="img/hiptravel.png" />
                         <div class="hover-state">
-
-
-                            <h3 class="uppercase mb8">Vagabond</h3>
-                            <hr>
-                            <h6 class="uppercase">Ruby on Rails </h6>
-
-
+                            <h5 class="uppercase">
+                                This app was built using Ruby on Rails during a 2 day sprint. Users have the ability to create blog posts in cities they have traveled too, so other users know just what to do when in that city themselves.
+                                Not sure the place looks like what its hyped up to be? You don't even have to leave the page to check with Google Maps intergrated in you can explore the location.
+                            </h5>
                         </div>
                     </div>
                 </a>
                 </div>
                 <div class="col-sm-6">
-                    <a href="flock.html">
+                    <a target="_blank" href="https://github.com/dangerstephen/FlockOS--Postmates-Bot" onclick="window.open('https://github.com/dangerstephen/FlockOS--Postmates-Widget')">
                     <div class="image-tile hover-tile text-center">
                         <img alt="image" class="background-image" src="img/flock.png" />
                         <div class="hover-state">
-
-                            <h3 class="uppercase mb8">Flock OS App's</h3>
-                            <hr>
-                            <h6 class="uppercase">Node.js & Express</h6>
-
-
-
+                            <h5 class="uppercase">
+                                2 Flock OS Apps I built during the 2017 Dev Week Hackathon. They are both build using Node.JS, Express while interacting with the Flock OS SDK. Both apps interact with Postmates to make ordering food for your team easier.
+                            </h5>
                         </div>
                     </div>
                 </a>
@@ -303,54 +295,22 @@
     <br>
 
     <!-- Contact -->
-    <!-- <section id="contact" class="bg-primary hidden">
+    <section id="contact" class="hidden">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-10 col-md-8">
-                        <h4 class="uppercase">Contact</h4>
-                        <div class="col-sm-6">
-                            <div class="mb40 mb-xs-24">
-                                <h6 class="uppercase mb0">Email</h6>
-                                <p class="fade-half">
-                                    <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a>
-                                </p>
-                            </div>
-                            <div class="">
-                                <h6 class="uppercase mb0">Phone</h6>
-                                <p class="fade-half">
-                                    <a href="tel:801-358-5821">(801) 358-5821</a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 p0">
-                            <div class="">
-                                <ul>
-                                    <li>
-                                        <a target="_blank" href="https://github.com/dangerstephen">
-                                            <h6 class="uppercase">
-                                            <i class="ti-github">&nbsp;</i> Github</h6>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a target="_blank" href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button">
-                                            <h6 class="uppercase">
-                                            <i class="ti-linkedin">&nbsp;</i> Linkedin</h6>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a target="_blank" href="https://www.facebook.com/stephen.dangerfield.7">
-                                            <h6 class="uppercase">
-                                            <i class="ti-facebook">&nbsp;</i> Facebook</h6>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row text-center">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <h5 class="large uppercase">Until we meet again</h5>
+                        <a target="_blank" class="footer-links" href="mailto:me@stephendangerfield.com"><i class="footer-icon ti-email"></i></a>
+                        <a target="_blank" class="footer-links" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/"><i class="footer-icon ti-linkedin"></i></a>
+                        <a target="_blank" class="footer-links" href="https://www.instagram.com/dangerstephen/"><i class="footer-icon ti-instagram"></i></a>
+                        <a target="_blank" class="footer-links" href="https://github.com/dangerstephen"><i class="footer-icon ti-github"></i></a>
+                        <a target="_blank" class="footer-links" href="tel:1-801-358-5821"><i class="footer-icon ti-mobile"></i></a>
 
+                    </div>
                 </div>
+
             </div>
-        </section> -->
+        </section>
 
 
 

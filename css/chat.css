@@ -1,7 +1,5 @@
 .input {
     display: block;
-    border: 1px solid white;
-    border-radius: 6px;
     max-width: 290px;
     margin-top: 1.3rem;
 }
@@ -12,12 +10,6 @@
     cursor: pointer;
     color: white;
     padding: .7rem 1rem;
-}
-
-
-.input .option[optionActive] {
-    background: white;
-    color: #0096fc;
 }
 
 .wontChat, .mindChanged {
