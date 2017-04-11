@@ -157,7 +157,7 @@ textarea {
     padding-right: 5rem
 }
 
-@media (min-width:680px) {
+@media (max-width:680px) {
     .messageUser {
         padding-right: 9rem
     }

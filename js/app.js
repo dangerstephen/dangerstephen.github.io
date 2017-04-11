@@ -119,8 +119,6 @@ $(document).ready(function() {
                         data: $('.nameForm').serialize(),
                         dataType: "json"
                     });
-                    var dogs = $('.nameForm').serialize();
-                    console.log(dogs + "is the name form");
                 $('.wontChat').text('Exit Chat');
                 $('.nextGroup').addClass('hidden');
                 $(':input').prop("disabled", true);
@@ -158,7 +156,7 @@ $(document).ready(function() {
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse1 === "Contact") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="name" placeholder="enter your email" data-required /></div><textarea type="text" class="inputChatText" id="message"  placeholder="enter your message" data-required/></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><textarea type="text" class="inputChatText" id="message"  placeholder="enter your message"></textarea></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.contactOption2').addClass('hidden');
                     $('.contactOption3').addClass('hidden');
                     $('.contactOption4').addClass('hidden');
@@ -168,19 +166,15 @@ $(document).ready(function() {
 
                     $('.nextGroup1').addClass('hidden');
                     pageMover();
-                    $(document).on('click', '.sendEmail', function() {
+                    $(document).on('click', '.sendEmail', function(e) {
                         var errors = {};
                         errors = checkEmail();
                         if ($.isEmptyObject(errors)) {
-                            $.ajax({
-                              method: 'POST',
-                              url: 'https://formspree.io/me@stephendangerfield.com',
-                              data: $('.contactForm').serialize(),
-                              datatype: 'json',
-                            });
                             $('.sendEmail').addClass('hidden');
-                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em>' + email + ' </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
+                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em>undefined</em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
                             newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I am having fun! 😃 Why dont we keep going?</p></div></div>');
+                            e.preventDefault();
+                            $(':input').prop("disabled", true);
                             setTimeout(pageMover(), 3000);
                         } else {
                             return false;
@@ -241,7 +235,7 @@ $(document).ready(function() {
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse2 === "Contact") {
-                    newActive.append('<form class="contactForm"><div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required/></div><textarea type="text" class="inputChatText" id="message" name="message" placeholder="enter your message" data-required/></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><textarea type="text" class="inputChatText" id="message"  placeholder="enter your message"></textarea></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.contactOption3').addClass('hidden');
                     $('.contactOption4').addClass('hidden');
                     $('.aboutOption2').addClass('hidden');
@@ -256,15 +250,11 @@ $(document).ready(function() {
                         var errors = {};
                         errors = checkEmail();
                         if ($.isEmptyObject(errors)) {
-                            $.ajax({
-                                method: 'POST',
-                                url: 'https://formspree.io/me@stephendangerfield.com',
-                                data: $('.contactForm').serialize(),
-                                datatype: 'json',
-                            });
                             $('.sendEmail').addClass('hidden');
-                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em>' + email + ' </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
+                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em> undefined </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
                             newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I am having fun! 😃 Why dont we keep going?</p></div></div>');
+                            e.preventDefault();
+                            $(':input').prop("disabled", true);
                             setTimeout(pageMover(), 3000);
                         } else {
                             return false;
@@ -322,7 +312,7 @@ $(document).ready(function() {
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse3 === "Contact") {
-                    newActive.append('<form class="contactForm"><div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required/></div><textarea type="text" class="inputChatText" id="message" name="message" placeholder="enter your message" data-required/></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><textarea type="text" class="inputChatText" id="message"  placeholder="enter your message"></textarea></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.contactOption4').addClass('hidden');
                     $('.aboutOption3').addClass('hidden');
                     $('.experienceOption3').addClass('hidden');
@@ -335,14 +325,8 @@ $(document).ready(function() {
                         var errors = {};
                         errors = checkEmail();
                         if ($.isEmptyObject(errors)) {
-                            $.ajax({
-                                method: 'POST',
-                                url: 'https://formspree.io/me@stephendangerfield.com',
-                                data: $('#contact-form').serialize(),
-                                datatype: 'json'
-                            });
                             $('.sendEmail').addClass('hidden');
-                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em>' + email + ' </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
+                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em> undefined </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
                             newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I am having fun! 😃 Why dont we keep going?</p></div></div>');
                             e.preventDefault();
                             $(':input').prop("disabled", true);
@@ -401,7 +385,7 @@ $(document).ready(function() {
                     $('.nextGroup4').addClass('hidden');
                     pageMover();
                 } else if (clientResponse4 === "Contact") {
-                    newActive.append('<form class="contactForm"><div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required/></div><textarea type="text" class="inputChatText" id="message" name="message" placeholder="enter your message" data-required/></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><textarea type="text" class="inputChatText" id="message"  placeholder="enter your message"></textarea></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.nextGroup4').addClass('hidden');
                     $('.aboutOption4').addClass('hidden');
                     $('.experienceOption4').addClass('hidden');
@@ -413,17 +397,11 @@ $(document).ready(function() {
                         var errors = {};
                         errors = checkEmail();
                         if ($.isEmptyObject(errors)) {
-                            $.ajax({
-                                method: 'POST',
-                                url: 'https://formspree.io/me@stephendangerfield.com',
-                                data: $('#contact-form').serialize(),
-                                datatype: 'json'
-                            });
                             $('.sendEmail').addClass('hidden');
                             $('.wontChat').addClass('hidden');
                             $('section').removeClass('hidden');
-                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em>' + email + ' </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
-                            newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> Gotta run 🏃🏼! Enjoy the rest of the site and have a great day! Let me know if you have questions.</p></div></div>');
+                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em> undefined </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
+                            newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I am having fun! 😃 Why dont we keep going?</p></div></div>');
                             e.preventDefault();
                             $(':input').prop("disabled", true);
                             setTimeout(pageMover(), 3000);
