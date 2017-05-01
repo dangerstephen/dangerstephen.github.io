@@ -145,7 +145,7 @@ $(document).ready(function() {
             var newActive = $('.group[data-active]').next('.group');
             if ($.isEmptyObject(errors)) {
                 if (clientResponse1 === "About") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww 😊 I\'m flatterd. I\'m Stephen Dangerfield, when behind a computer I\'m a software engineer. I love learning new things and challanging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah I came to fall in love with everything outdoors. So I now spend my free time in it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww, 😊 I\'m flattered. I\'m Stephen Dangerfield when behind a computer I\'m either planning or developing products people will love. I love learning new things and challenging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah, I came to fall in love with everything outdoors. So I now spend my free time enjoying it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
                     $('.aboutOption2').addClass('hidden');
                     $('.aboutOption3').addClass('hidden');
                     $('.aboutOption4').addClass('hidden');
@@ -156,7 +156,7 @@ $(document).ready(function() {
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse1 === "Contact") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><textarea type="text" class="inputChatText" id="message"  placeholder="enter your message"></textarea></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay, ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also, please leave me your brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><input type="text" class="inputChatText" id="message" name="message" placeholder="enter your message"></input></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.contactOption2').addClass('hidden');
                     $('.contactOption3').addClass('hidden');
                     $('.contactOption4').addClass('hidden');
@@ -170,9 +170,16 @@ $(document).ready(function() {
                         var errors = {};
                         errors = checkEmail();
                         if ($.isEmptyObject(errors)) {
+                            var email = $('#chatWindow').find('#email').val();
+                            $.ajax({
+                                url: "https://formspree.io/me@stephendangerfield.com",
+                                method: "POST",
+                                data: $('.contactForm').serialize(),
+                                dataType: "json"
+                            });
                             $('.sendEmail').addClass('hidden');
-                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em>undefined</em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
-                            newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I am having fun! 😃 Why dont we keep going?</p></div></div>');
+                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em>' + email + ' </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
+                            newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I\'m having fun! 😃 Why dont we keep going?</p></div></div>');
                             e.preventDefault();
                             $(':input').prop("disabled", true);
                             setTimeout(pageMover(), 3000);
@@ -181,7 +188,7 @@ $(document).ready(function() {
                         };
                     })
                 } else if (clientResponse1 === "Experience") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Most Recently I was a Full Stack Web Developer at <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>. During my time here I worked on developing applications during tight 1 week deadlines both on teams and individually.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to GA I was a Technician Manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>. A few of my rolls here included: Technician Training, Recruiting and Inventory Managment. For diffrent offices accros the US.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a> </p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Currently, I\'m working as a Technical Project Manager at <a target="_blank" href="http://www.squareonelabs.io/">SQ1 Labs</a>. Where we are working hard to solve a gap in messaging. </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to SQ1, I worked as a Software Engineer for <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>, where I was tasked with rapidly prototyping applications. Before that, I was a technical manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>  where I oversaw a few of our offices. </p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">I\'m always open to hearing about new opportunities that you may have! Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a></p></div></div>');
                     $('.experienceOption2').addClass('hidden');
                     $('.experienceOption3').addClass('hidden');
                     $('.experienceOption4').addClass('hidden');
@@ -193,7 +200,7 @@ $(document).ready(function() {
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse1 === "Projects") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun form of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Currently, I am working on building a wide range of products that focus on messaging. These apps are all integrated with <a target="_blank" href="https://slack.com/">Slack</a> and <a target="_blank" href="https://www.twilio.com/">Twilio</a>. Get early access to them <a target="_blank" href="http://www.squareonelabs.io/"> here.</a></p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course, I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
                     $('.projectsOption2').addClass('hidden');
                     $('.projectsOption3').addClass('hidden');
                     $('.projectsOption4').addClass('hidden');
@@ -225,7 +232,7 @@ $(document).ready(function() {
             var newActive = $('.group[data-active]').next('.group');
             if ($.isEmptyObject(errors)) {
                 if (clientResponse2 === "About") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww 😊 I\'m flatterd. I\'m Stephen Dangerfield, when behind a computer I\'m a software engineer. I love learning new things and challanging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah I came to fall in love with everything outdoors. So I now spend my free time in it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww, 😊 I\'m flattered. I\'m Stephen Dangerfield when behind a computer I\'m either planning or developing products people will love. I love learning new things and challenging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah, I came to fall in love with everything outdoors. So I now spend my free time enjoying it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
                     $('.aboutOption3').addClass('hidden');
                     $('.aboutOption4').addClass('hidden');
                     $('.contactOption2').addClass('hidden');
@@ -235,7 +242,7 @@ $(document).ready(function() {
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse2 === "Contact") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><textarea type="text" class="inputChatText" id="message"  placeholder="enter your message"></textarea></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay, ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also, please leave me your brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><input type="text" class="inputChatText" id="message" name="message" placeholder="enter your message"></input></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.contactOption3').addClass('hidden');
                     $('.contactOption4').addClass('hidden');
                     $('.aboutOption2').addClass('hidden');
@@ -246,13 +253,19 @@ $(document).ready(function() {
                     pageMover();
                     $(document).on('click', '.sendEmail', function(e) {
                         e.preventDefault();
-                        var email = $('#chatWindow').find('#email').val();
                         var errors = {};
                         errors = checkEmail();
                         if ($.isEmptyObject(errors)) {
+                            var email = $('#chatWindow').find('#email').val();
+                            $.ajax({
+                                url: "https://formspree.io/me@stephendangerfield.com",
+                                method: "POST",
+                                data: $('.contactForm').serialize(),
+                                dataType: "json"
+                            });
                             $('.sendEmail').addClass('hidden');
-                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em> undefined </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
-                            newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I am having fun! 😃 Why dont we keep going?</p></div></div>');
+                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em>' + email + ' </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
+                            newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I\'m having fun! 😃 Why dont we keep going?</p></div></div>');
                             e.preventDefault();
                             $(':input').prop("disabled", true);
                             setTimeout(pageMover(), 3000);
@@ -261,7 +274,7 @@ $(document).ready(function() {
                         };
                     })
                 } else if (clientResponse2 === "Experience") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Most Recently I was a Full Stack Web Developer at <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>. During my time here I worked on developing applications during tight 1 week deadlines both on teams and individually.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to GA I was a Technician Manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>. A few of my rolls here included: Technician Training, Recruiting and Inventory Managment. For diffrent offices accros the US.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a> </p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Currently, I\'m working as a Technical Project Manager at <a target="_blank" href="http://www.squareonelabs.io/">SQ1 Labs</a>. Where we are working hard to solve a gap in messaging. </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to SQ1, I worked as a Software Engineer for <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>, where I was tasked with rapidly prototyping applications. Before that, I was a technical manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>  where I oversaw a few of our offices. </p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">I\'m always open to hearing about new opportunities that you may have! Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a></p></div></div>');
                     $('.experienceOption3').addClass('hidden');
                     $('.experienceOption4').addClass('hidden');
                     $('.contactOption2').addClass('hidden');
@@ -271,7 +284,7 @@ $(document).ready(function() {
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse2 === "Projects") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun form of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Currently, I am working on building a wide range of products that focus on messaging. These apps are all integrated with <a target="_blank" href="https://slack.com/">Slack</a> and <a target="_blank" href="https://www.twilio.com/">Twilio</a>. Get early access to them <a target="_blank" href="http://www.squareonelabs.io/"> here.</a></p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course, I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
                     $('.projectsOption3').addClass('hidden');
                     $('.projectsOption4').addClass('hidden');
                     $('.contactOption2').addClass('hidden');
@@ -303,7 +316,7 @@ $(document).ready(function() {
             var newActive = $('.group[data-active]').next('.group');
             if ($.isEmptyObject(errors)) {
                 if (clientResponse3 === "About") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww 😊 I\'m flatterd. I\'m Stephen Dangerfield, when behind a computer I\'m a software engineer. I love learning new things and challanging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah I came to fall in love with everything outdoors. So I now spend my free time in it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww, 😊 I\'m flattered. I\'m Stephen Dangerfield when behind a computer I\'m either planning or developing products people will love. I love learning new things and challenging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah, I came to fall in love with everything outdoors. So I now spend my free time enjoying it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
                     $('.aboutOption4').addClass('hidden');
                     $('.contactOption3').addClass('hidden');
                     $('.experienceOption3').addClass('hidden');
@@ -312,7 +325,7 @@ $(document).ready(function() {
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse3 === "Contact") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><textarea type="text" class="inputChatText" id="message"  placeholder="enter your message"></textarea></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay, ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also, please leave me your brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><input type="text" class="inputChatText" id="message" name="message" placeholder="enter your message"></input></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.contactOption4').addClass('hidden');
                     $('.aboutOption3').addClass('hidden');
                     $('.experienceOption3').addClass('hidden');
@@ -321,13 +334,19 @@ $(document).ready(function() {
                     pageMover();
                     $(document).on('click', '.sendEmail', function(e) {
                         e.preventDefault();
-                        var email = $('#chatWindow').find('#email').val();
                         var errors = {};
                         errors = checkEmail();
                         if ($.isEmptyObject(errors)) {
+                            var email = $('#chatWindow').find('#email').val();
+                            $.ajax({
+                                url: "https://formspree.io/me@stephendangerfield.com",
+                                method: "POST",
+                                data: $('.contactForm').serialize(),
+                                dataType: "json"
+                            });
                             $('.sendEmail').addClass('hidden');
-                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em> undefined </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
-                            newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I am having fun! 😃 Why dont we keep going?</p></div></div>');
+                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em>' + email + ' </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
+                            newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I\'m having fun! 😃 Why dont we keep going?</p></div></div>');
                             e.preventDefault();
                             $(':input').prop("disabled", true);
                             setTimeout(pageMover(), 3000);
@@ -336,7 +355,7 @@ $(document).ready(function() {
                         };
                     })
                 } else if (clientResponse3 === "Experience") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Most Recently I was a Full Stack Web Developer at <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>. During my time here I worked on developing applications during tight 1 week deadlines both on teams and individually.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to GA I was a Technician Manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>. A few of my rolls here included: Technician Training, Recruiting and Inventory Managment. For diffrent offices accros the US.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a> </p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Currently, I\'m working as a Technical Project Manager at <a target="_blank" href="http://www.squareonelabs.io/">SQ1 Labs</a>. Where we are working hard to solve a gap in messaging. </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to SQ1, I worked as a Software Engineer for <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>, where I was tasked with rapidly prototyping applications. Before that, I was a technical manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>  where I oversaw a few of our offices. </p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">I\'m always open to hearing about new opportunities that you may have! Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a></p></div></div>');
                     $('.experienceOption4').addClass('hidden');
                     $('.contactOption3').addClass('hidden');
                     $('.aboutOption3').addClass('hidden');
@@ -345,7 +364,7 @@ $(document).ready(function() {
                     pageMover();
                     setTimeout(pageMover(), 3000);
                 } else if (clientResponse3 === "Projects") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun form of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Currently, I am working on building a wide range of products that focus on messaging. These apps are all integrated with <a target="_blank" href="https://slack.com/">Slack</a> and <a target="_blank" href="https://www.twilio.com/">Twilio</a>. Get early access to them <a target="_blank" href="http://www.squareonelabs.io/"> here.</a></p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course, I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>.</p></div></div>');
                     $('.projectsOption4').addClass('hidden');
                     $('.contactOption3').addClass('hidden');
                     $('.experienceOption3').addClass('hidden');
@@ -375,7 +394,7 @@ $(document).ready(function() {
             var newActive = $('.group[data-active]').next('.group');
             if ($.isEmptyObject(errors)) {
                 if (clientResponse4 === "About") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww 😊 I\'m flatterd. I\'m Stephen Dangerfield, when behind a computer I\'m a software engineer. I love learning new things and challanging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah I came to fall in love with everything outdoors. So I now spend my free time in it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Aww, 😊 I\'m flattered. I\'m Stephen Dangerfield when behind a computer I\'m either planning or developing products people will love. I love learning new things and challenging myself to do things outside of my comfort zone.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> When I manage to escape the computer screen you can catch me outside. Gowing up in Utah, I came to fall in love with everything outdoors. So I now spend my free time enjoying it. From climbing big rocks, trail running, to even just going new places to experience new things.</p></div></div>');
                     newActive.append('<div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText"> Gotta run 🏃🏼! Enjoy the rest of the site and have a great day! Let me know if you have questions.</p></div></div>');
                     $('.wontChat').addClass('hidden');
                     $('.contactOption4').addClass('hidden');
@@ -385,7 +404,7 @@ $(document).ready(function() {
                     $('.nextGroup4').addClass('hidden');
                     pageMover();
                 } else if (clientResponse4 === "Contact") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also plesae leave me a brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><textarea type="text" class="inputChatText" id="message"  placeholder="enter your message"></textarea></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Okay, ' + name + '! I\'d love to chat. But first I need to know a few things. What\'s your email? 📧 </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Also, plesae leave me your brief message</p></div></div><form class="contactForm"><div class="message messageUser1"><div class="bubble bubbleUser"><p class="chatText"><div class="chat-input"><div class="chat-input"><input type="email" class="inputChatText" id="email" name="email" placeholder="enter your email" data-required /></div><input type="text" class="inputChatText" id="message" name="message" placeholder="enter your message"></input></div></p><img type="submit" class="sendEmail" src="img/up.png"></img></div></div></form>');
                     $('.nextGroup4').addClass('hidden');
                     $('.aboutOption4').addClass('hidden');
                     $('.experienceOption4').addClass('hidden');
@@ -397,11 +416,19 @@ $(document).ready(function() {
                         var errors = {};
                         errors = checkEmail();
                         if ($.isEmptyObject(errors)) {
+                            var email = $('#chatWindow').find('#email').val();
+
+                            $.ajax({
+                                url: "https://formspree.io/me@stephendangerfield.com",
+                                method: "POST",
+                                data: $('.contactForm').serialize(),
+                                dataType: "json"
+                            });
                             $('.sendEmail').addClass('hidden');
                             $('.wontChat').addClass('hidden');
                             $('section').removeClass('hidden');
-                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em> undefined </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
-                            newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I am having fun! 😃 Why dont we keep going?</p></div></div>');
+                            newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText"> Thanks! Your email has been sent from <em>' + email + ' </em>, and I\'ll get back to you as soon as possible! If this doesn\'t look right, feel free to contact me the old fashioned way at <a href="mailto:me@stephendangerfield.com">me@stephendangerfield.com</a></p></div></div>');
+                            newActive.append('<div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Man! I\'m having fun! 😃 Why dont we keep going?</p></div></div>');
                             e.preventDefault();
                             $(':input').prop("disabled", true);
                             setTimeout(pageMover(), 3000);
@@ -410,7 +437,7 @@ $(document).ready(function() {
                         };
                     })
                 } else if (clientResponse4 === "Experience") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Most Recently I was a Full Stack Web Developer at <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>. During my time here I worked on developing applications during tight 1 week deadlines both on teams and individually.</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to GA I was a Technician Manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>. A few of my rolls here included: Technician Training, Recruiting and Inventory Managment. For diffrent offices accros the US.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a>. Gotta run 🏃🏼 Enjoy the rest of the site and have a great day! Let me know if you have questions!</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">Thanks for asking! Currently, I\'m working as a Technical Project Manager at <a target="_blank" href="http://www.squareonelabs.io/">SQ1 Labs</a>. Where we are working hard to solve a gap in messaging. </p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Prior to SQ1, I worked as a Software Engineer for <a target="_blank" href="https://generalassemb.ly/">General Assembly</a>, where I was tasked with rapidly prototyping applications. Before that, I was a technical manager for <a target="_blank" href="https://www.fluenthome.com/">Fluent Home</a>  where I oversaw a few of our offices. </p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">I\'m always open to hearing about new opportunities that you may have! Sill curious? Feel free to check my <a target="_blank" href="https://www.linkedin.com/in/stephen-dangerfield-a46372128/">LinkedIn</a> Gotta run 🏃🏼 Enjoy the rest of the site and have a great day!</p></div></div>');
                     $('.wontChat').addClass('hidden');
                     $('.contactOption4').addClass('hidden');
                     $('.aboutOption4').addClass('hidden');
@@ -419,7 +446,7 @@ $(document).ready(function() {
                     $('.nextGroup4').addClass('hidden');
                     pageMover();
                 } else if (clientResponse4 === "Projects") {
-                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText"> I also really enjoyed building <a target="_blank" href="https://ourthoughts.herokuapp.com/"> Our Thoughts</a>. I used the <a href="#">Twilio</a> API to message users which made for a fun form of communication.</p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>. Gotta run 🏃🏼 Enjoy the rest of the site and have a great day! Let me know if you have questions!</p></div></div>');
+                    newActive.append('<div class="message messageClient"><div class="bubble bubbleClient"><p class="chatText">One of my personal projects I have enjoyed most is <a target="_blank" href="https://recipebots.herokuapp.com/">Recipe bots</a>. It allows you to enter a website URL and will then go out and scrape the information on that page to generate you a Recipe Card. You should check it out!</p></div></div><div class="message messageClient1"><div class="bubble bubbleClient"><p class="chatText">Currently, I am working on building a wide range of products that focus on messaging. These apps are all integrated with <a target="_blank" href="https://slack.com/">Slack</a> and <a target="_blank" href="https://www.twilio.com/">Twilio</a>. Get early access to them <a target="_blank" href="http://www.squareonelabs.io/"> here.</a></p></div></div><div class="message messageClient2"><div class="bubble bubbleClient"><p class="chatText">Of course, I also built this site, along with many others, which you can find on <a target="_blank" href="https://github.com/dangerstephen">GitHub</a>. Gotta run 🏃🏼 Enjoy the rest of the site and have a great day! Let me know if you have questions!</p></div></div>');
                     $('.wontChat').addClass('hidden');
                     $('.contactOption4').addClass('hidden');
                     $('.experienceOption4').addClass('hidden');
