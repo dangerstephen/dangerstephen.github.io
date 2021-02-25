@@ -73,6 +73,7 @@ h1.large {
   font-weight: 100;
 }
 
+
 h5.large {
   font-size: 30px;
   line-height: 40px;
@@ -265,4 +266,11 @@ text-decoration: none;
  color: inherit;
  text-decoration:none;
  cursor:pointer;
+}
+
+h1.pronoun {
+  margin-top: 0px;
+  font-size: 32px;
+  line-height: 80px;
+  font-weight: 100;
 }
